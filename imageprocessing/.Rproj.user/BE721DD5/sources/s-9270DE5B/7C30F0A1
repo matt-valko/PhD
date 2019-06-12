@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1560374437845.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3631213664",
+    "id" : "7C30F0A1",
+    "lastKnownWriteTime" : 1560374452,
+    "last_content_update" : 1560374452389,
+    "path" : "~/Documents/GitHub/PhD/imageprocessing/knitteddocumenttest.Rmd",
+    "project_path" : "knitteddocumenttest.Rmd",
+    "properties" : {
+        "cursorPosition" : "21,43",
+        "scrollLine" : "4"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

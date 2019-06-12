@@ -1,0 +1,32 @@
+---
+title: "Image Manipulation"
+author: "Matthew Valko"
+date: "6/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load dependencies
+Load imager
+```{r Depenccies, include=FALSE}
+#require(ggplot2)
+require('imager')
+```
+
+## Show dimension of an image
+
+```{r plant}
+plant<- load.image('~/Documents/PHD/imageprocessing/burseragrav1.jpg')
+dim(plant)
+```
+
+## Image
+
+Print Image
+```{r plantimkage, echo=FALSE}
+plot(plant)
+```
+
