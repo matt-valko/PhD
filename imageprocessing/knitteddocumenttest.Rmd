@@ -14,6 +14,9 @@ Load imager
 ```{r Depenccies, include=FALSE}
 #require(ggplot2)
 require('imager')
+require('plyr')
+require('magrittr')
+between<-function(x,y,z){ return(x>=y & x<=z)}
 ```
 
 ## Show dimension of an image
@@ -61,4 +64,43 @@ imrotate(plant,30) %>% plot
 
 ```{r grayimage}
 grayscale(plant) %>% plot
+```
+
+
+
+
+## Mask Cut
+
+```{r flood}
+msk <- px.flood(plant,400,900,sigma=.28) %>% as.cimg
+inv<- msk %>%as.data.frame
+inv$value<- as.numeric(inv$value==0)
+msk<- inv %>% as.cimg()
+plot(msk*plant)
+```
+
+
+
+## Filter out data using a set of pixels based on either EBG or HSV values
+```{r Filter based on sigma and mean values}
+
+indicatorMatrix <-function( test,xrange,yrange,types)
+{
+
+if(types=='RBG'){
+newtest<- test %>% as.data.frame} else{newtest<-RGBtoHSV(test) %>% as.data.frame}	
+dfnew<-subset(newtest, x%in%xrange & y%in%yrange) %>% ddply( .(cc),summarize,SD = sd(value, na.rm=TRUE),Mean = mean(value, na.rm=TRUE))
+
+tmp<-subset(newtest,cc==1)
+tmp$value<-as.numeric( between (newtest$value[newtest$cc==1] , unlist(dfnew[1,3]-dfnew[1,2]), unlist(dfnew[1,3]+dfnew[1,2]) ) & between ( newtest$value[newtest$cc==2 ] , unlist(dfnew[2,3]-dfnew[2,2]), unlist(dfnew[2,3]+dfnew[2,2]))
+	& between ( newtest$value[newtest$cc==3] , unlist(dfnew[3,3]-dfnew[3,2]), unlist(dfnew[3,3]+dfnew[3,2])))
+
+newtest$value<- rep(tmp$value,3) *newtest$value
+tester<- newtest %>% as.cimg
+return(list(tester,tmp,dfnew))
+}
+samplemat3<- indicatorMatrix(plant,900:1000 ,850:950,'RBG')
+#Isolate Leaves
+plot(samplemat3[[1]])
+
 ```

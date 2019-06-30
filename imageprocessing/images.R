@@ -1,5 +1,5 @@
 require('imager')
-plant<- load.image('~/Documents/PHD/imageprocessing/IMG_1902.jpg')
+plant<- load.image('~/Documents/GitHub/PhD//imageprocessing/burseragrav1.jpg')
 test<-plant
 dim(test)
 as.data.frame(boats)
@@ -24,5 +24,8 @@ plot(d,main="Distance map")
 points(598,232,col="red")
 px.flood(plant, x, y, z = 1, sigma = 0, high_connexity = FALSE)
 
-msk <- px.flood(plant,100,100,sigma=.28) %>% as.cimg
-plot(plant*msk)
+msk <- px.flood(plant,400,900,sigma=.28) %>% as.cimg
+inv<- msk %>%as.data.frame
+inv$value<- as.numeric(inv$value==0)
+msk<- inv %>% as.cimg()
+plot(msk*plant)
