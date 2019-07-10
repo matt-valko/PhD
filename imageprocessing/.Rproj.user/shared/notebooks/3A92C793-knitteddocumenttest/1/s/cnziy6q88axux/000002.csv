@@ -1,0 +1,15 @@
+"0","require('data.table')
+"
+"2","Loading required package: data.table
+"
+"2","data.table 1.12.2 using 6 threads (see ?getDTthreads).  Latest news: r-datatable.com
+"
+"2","
+Attaching package: ‘data.table’
+
+"
+"2","The following object is masked _by_ ‘.GlobalEnv’:
+
+    between
+
+"

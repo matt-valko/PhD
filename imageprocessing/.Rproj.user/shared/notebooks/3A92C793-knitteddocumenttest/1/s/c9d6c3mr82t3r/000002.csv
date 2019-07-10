@@ -1,0 +1,44 @@
+"0","require('imager')
+"
+"2","Loading required package: imager
+"
+"2","Loading required package: magrittr
+"
+"2","
+Attaching package: ‘imager’
+
+"
+"2","The following object is masked from ‘package:magrittr’:
+
+    add
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    convolve, spectrum
+
+"
+"2","The following object is masked from ‘package:graphics’:
+
+    frame
+
+"
+"2","The following object is masked from ‘package:base’:
+
+    save.image
+
+"
+"0","require('plyr')"
+"2","Loading required package: plyr
+"
+"2","
+Attaching package: ‘plyr’
+
+"
+"2","The following object is masked from ‘package:imager’:
+
+    liply
+
+"
+"0","require('magrittr')"
+"0","between<-function(x,y,z){ return(x>=y & x<=z)}"

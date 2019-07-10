@@ -1,0 +1,4 @@
+"0","grayscale(plant) %>% plot
+"
+"2","Error in grayscale(plant) %>% plot : could not find function ""%>%""
+"
