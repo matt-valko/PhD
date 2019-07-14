@@ -1,4 +1,5 @@
-"0","indicatorMatrix <-function( test,xrange,yrange,types)
+"0","
+indicatorMatrix <-function( test,xrange,yrange,types)
 {
 
 if(types=='RBG'){
@@ -16,6 +17,3 @@ return(list(tester,tmp,dfnew))
 samplemat3<- indicatorMatrix(plant,900:1000 ,850:950,'RBG')
 "
 "2","Guessing image dimensions from maximum coordinate values"
-"0","#Isolate Leaves"
-"0","plot(samplemat3[[1]])"
-"0",""

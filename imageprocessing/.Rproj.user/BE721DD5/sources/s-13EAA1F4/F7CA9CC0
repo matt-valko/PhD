@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "1853290798",
     "id" : "F7CA9CC0",
-    "lastKnownWriteTime" : 1562795734,
-    "last_content_update" : 1562795734372,
+    "lastKnownWriteTime" : 1563139197,
+    "last_content_update" : 1563139197889,
     "path" : "~/Documents/GitHub/PhD/imageprocessing/knitteddocumenttest.Rmd",
     "project_path" : "knitteddocumenttest.Rmd",
     "properties" : {
-        "cursorPosition" : "200,0",
-        "last_setup_crc32" : "BD95BF81bb338d19",
-        "scrollLine" : "187"
+        "cursorPosition" : "222,15",
+        "last_setup_crc32" : "13EAA1F4bb338d19",
+        "scrollLine" : "211"
     },
     "read_only" : false,
     "read_only_alternatives" : [

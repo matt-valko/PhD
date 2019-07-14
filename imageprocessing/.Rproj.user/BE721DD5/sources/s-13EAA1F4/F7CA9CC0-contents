@@ -206,3 +206,24 @@ as.cimg(photo) %>% plot
 
 #Isolate Leaves
 ```
+
+## Compute Area
+```{r Area}
+
+binImage <- samplemat3[[2]] %>% as.cimg
+sum(samplemat3[[2]]$value)
+```
+
+
+
+
+
+
+## Compute Perimeter
+```{r Perimeter}
+
+binImageShrink <- samplemat3[[2]] %>% as.cimg %>% shrink(1) %>% as.data.frame
+
+sum(samplemat3[[2]]$value)- sum(binImageShrink$value)# ) %>% as.cimg %>% plot
+#Isolate Leaves
+```

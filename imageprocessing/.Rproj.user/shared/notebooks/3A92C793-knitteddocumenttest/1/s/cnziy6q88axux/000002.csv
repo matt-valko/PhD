@@ -1,15 +1,52 @@
-"0","require('data.table')
+"0","require('imager')
 "
-"2","Loading required package: data.table
+"2","Loading required package: imager
 "
-"2","data.table 1.12.2 using 6 threads (see ?getDTthreads).  Latest news: r-datatable.com
+"2","Loading required package: magrittr
 "
 "2","
-Attaching package: ‘data.table’
+Attaching package: ‘imager’
 
 "
-"2","The following object is masked _by_ ‘.GlobalEnv’:
+"2","The following object is masked from ‘package:magrittr’:
 
-    between
+    add
 
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    convolve, spectrum
+
+"
+"2","The following object is masked from ‘package:graphics’:
+
+    frame
+
+"
+"2","The following object is masked from ‘package:base’:
+
+    save.image
+
+"
+"0","require('plyr')"
+"2","Loading required package: plyr
+"
+"2","
+Attaching package: ‘plyr’
+
+"
+"2","The following object is masked from ‘package:imager’:
+
+    liply
+
+"
+"0","require('magrittr')"
+"0","require('data.table')"
+"2","Loading required package: data.table
+"
+"2","Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+"
+"2","data.table 1.12.2 using 6 threads (see ?getDTthreads).  Latest news: r-datatable.com
 "
