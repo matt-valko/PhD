@@ -210,9 +210,11 @@ as.cimg(photo) %>% plot
 ## Compute Area
 ```{r Area}
 
-binImage <- samplemat3[[2]] %>% as.cimg
-sum(samplemat3[[2]]$value)
+Area<- sum(samplemat3[[2]]$value)
+print(Area)
 ```
+
+
 
 
 
@@ -224,6 +226,35 @@ sum(samplemat3[[2]]$value)
 
 binImageShrink <- samplemat3[[2]] %>% as.cimg %>% shrink(1) %>% as.data.frame
 
-sum(samplemat3[[2]]$value)- sum(binImageShrink$value)# ) %>% as.cimg %>% plot
+Perimeter<- sum(samplemat3[[2]]$value)- sum(binImageShrink$value)# ) %>% as.cimg %>% 
+
+print(Perimeter)
+```
+
+
+
+
+
+## Create edge figure
+```{r edge}
+
+binImageShrink <- samplemat3[[2]] %>% as.cimg %>% shrink(1) %>% as.data.frame
+
+sum(samplemat3[[2]]$value)- sum(binImageShrink$cc)# ) %>% as.cimg %>% plot
+#Isolate Leaves
+```
+
+
+
+
+
+
+## Mean Point
+```{r Mean}
+
+subsetDF<-  subset (samplemat3[[2]], value==1) 
+mean(subsetDF$x)
+mean(subsetDF$y)
+
 #Isolate Leaves
 ```
