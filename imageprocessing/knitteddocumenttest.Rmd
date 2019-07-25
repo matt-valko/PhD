@@ -84,6 +84,12 @@ plot(msk*plant)
 ## Filter out data using a set of pixels based on either EBG or HSV values
 ```{r Filter based on sigma and mean values}
 
+subsetImage<- function(test,xrange,yrange){
+  newtest<- test %>% as.data.frame
+  dfnew<-subset(newtest, x%in%xrange & y%in%yrange) 
+  dfnew<- as.cimg(dfnew)
+  return(dfnew)}
+
 indicatorMatrix <-function( test,xrange,yrange,types)
 {
 
@@ -179,7 +185,6 @@ plot(graygrow)
 
 
 
-
 ## Eigenvalue
 ```{r eigenvalue}
 
@@ -197,12 +202,13 @@ plot(graygrow)
 gray<- grayscale(plant )
 pcamat<- gray %>% as.data.frame %>% data.table
 pcamat2<- data.table::dcast(pcamat,x~y, value.var='value') %>% as.matrix
-photo.pca <- prcomp(pcamat2, center = F)
+photo.pca <- prcomp(pcamat, center = F)
 
 #PCs <- c(round(0.9 * nrow(pcamat2)))
+photo<- pcamat
+photo[,3]<- pcamat[,3]*photo.pca$x[3,1]
 
-photo<- pcamat2*photo.pca$x[,1]
-as.cimg(photo) %>% plot
+photo%>% as.cimg%>% plot
 
 #Isolate Leaves
 ```
@@ -256,5 +262,40 @@ subsetDF<-  subset (samplemat3[[2]], value==1)
 mean(subsetDF$x)
 mean(subsetDF$y)
 
+#Isolate Leaves
+```
+
+
+
+## Edge Detection
+```{r Edge}
+#Use cannyedges
+leafimage<-subim(plant, x%inr% c(450,600),y%inr% c(1175,1500))
+edges<-cannyEdges(leafimage) 
+plot(edges)
+#Isolate Leaves
+```
+
+
+## Try the EBImage package
+```{r Contours}
+#Use cannyedges
+library('EBImage')
+
+
+img<-readImage('~/Documents/Github/PhD//imageprocessing/burseragrav1.jpg')
+grayimage<-channel(img,"gray")
+
+crop<-grayimage[450:600,1175:1500]
+  y = gblur(crop, 3) < .8
+  y <- bwlabel(y)
+  contours = ocontour(bwlabel(y))
+  c = localCurvature(x=contours[[1]], h=11)
+  i = c$curvature >= 0
+  pos = neg = array(0, dim(crop))
+  pos[c$contour[i,]+1]  = c$curvature[i]
+  neg[c$contour[!i,]+1] = -c$curvature[!i]
+  display(10*(rgbImage(pos,  neg)), title = "Image curvature")      
+                      
 #Isolate Leaves
 ```

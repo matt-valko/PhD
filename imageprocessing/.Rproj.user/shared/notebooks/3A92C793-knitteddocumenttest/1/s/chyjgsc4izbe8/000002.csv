@@ -1,0 +1,8 @@
+"0","img<-readImage('~/Documents/Github/PhD//imageprocessing/burseragrav1.jpg')
+grayimage<-channel(img,""gray"")
+
+crop<-grayimage[450:600,1175:1500,1]
+"
+"2","Error in slot(grayimage, "".Data"")[450:600, 1175:1500, 1, drop = FALSE] : 
+  incorrect number of dimensions
+"
