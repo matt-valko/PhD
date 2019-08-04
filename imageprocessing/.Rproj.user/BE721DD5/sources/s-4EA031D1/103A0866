@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564843731158.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1417283235",
+    "id" : "103A0866",
+    "lastKnownWriteTime" : 1564936028,
+    "last_content_update" : 1564936028099,
+    "path" : "~/Documents/GitHub/PhD/imageprocessing/ShinyApplication.R",
+    "project_path" : "ShinyApplication.R",
+    "properties" : {
+        "cursorPosition" : "81,21",
+        "scrollLine" : "68",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

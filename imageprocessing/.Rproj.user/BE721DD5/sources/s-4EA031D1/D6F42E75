@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1560381584653.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D6F42E75",
+    "lastKnownWriteTime" : 1560384677,
+    "last_content_update" : 1560384677410,
+    "path" : "~/Documents/GitHub/PhD/imageprocessing/images.R",
+    "project_path" : "images.R",
+    "properties" : {
+        "cursorPosition" : "27,12",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

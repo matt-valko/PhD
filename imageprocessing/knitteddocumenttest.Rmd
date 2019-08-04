@@ -287,7 +287,7 @@ img<-readImage('~/Documents/Github/PhD//imageprocessing/burseragrav1.jpg')
 grayimage<-channel(img,"gray")
 
 crop<-grayimage[450:600,1175:1500]
-  y = gblur(crop, 3) < .8
+  y = gblur(crop, 3) > .8
   y <- bwlabel(y)
   contours = ocontour(bwlabel(y))
   c = localCurvature(x=contours[[1]], h=11)
@@ -298,4 +298,57 @@ crop<-grayimage[450:600,1175:1500]
   display(10*(rgbImage(pos,  neg)), title = "Image curvature")      
                       
 #Isolate Leaves
+```
+
+
+
+## Compute teeth lengths
+```{r compute teeth lengths}
+#Use cannyedges
+  kern = makeBrush(3)  
+
+blah=as.Image(neg)
+blah2<-  blah>0.0
+blah3 <-dilate(blah2,kern)
+
+logo_label = bwlabel(blah3)
+table(logo_label)
+plot( colorLabels(logo_label) )
+
+
+                      
+#Isolate Leaves
+```
+
+
+
+
+## Compute Sinuslengths
+```{r compute sinus lengths}
+#Use cannyedges
+  kern = makeBrush(3)  
+
+blah=as.Image(pos)
+blah2<-  blah>0.0
+blah3 <-dilate(blah2,kern)
+
+logo_label = bwlabel(blah3)
+
+display( colorLabels(logo_label) )
+
+
+ computeFeatures.shape(logo_label)                     
+#Isolate Leaves
+```
+
+
+
+
+## Edge Filtering
+```{r compute Edge filtering on top}
+#Use cannyedges
+fHigh <- matrix(1, nc = 3, nr = 3)
+fHigh[2, 2] <- -8
+Image.fHigh <- filter2(logo_label, fHigh)
+display(Image.fHigh)
 ```

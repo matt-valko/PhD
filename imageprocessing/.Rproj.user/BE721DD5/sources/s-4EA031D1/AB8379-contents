@@ -1,0 +1,19 @@
+install.packages('rworldmap')
+library('rworldmap')
+setwd('~/Documents/')
+gbif<-read.csv('0016459-190621201848488.csv',sep='\t')
+
+
+gbifMapData<-subset(gbif,!is.na(decimalLatitude)&!is.na(decimalLongitude) &decimalLongitude< -1)
+newmap <- getMap(resolution = "high")
+plot(newmap)
+
+ 
+ points(gbifMapData$decimalLongitude, gbifMapData$decimalLatitude, col = "red", cex = .6)
+ 
+ 
+ 
+ 
+ edgemat<-as.data.frame(edges)
+ test<-dcast(edgemat,x+z~y,value.var='cc',fun = length)
+test2<-as.Image(test) 
